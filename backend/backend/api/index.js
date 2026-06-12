@@ -176,4 +176,8 @@ app.get('/api/health', (req, res) => {
     res.status(200).send('OK');
 });
 
-app.listen(port, () => console.log(`Backend Active on Port ${port}`));
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => console.log(`Backend Active on Port ${port}`));
+}
+
+module.exports = app;

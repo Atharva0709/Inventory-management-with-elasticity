@@ -7,7 +7,7 @@ import {
   PackageCheck, Share2, Zap, Loader2
 } from "lucide-react";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.PROD ? "" : (import.meta.env.VITE_API_URL || "http://localhost:3000");
 
 export default function LogisticsHub() {
   const [shipments, setShipments] = useState<any[]>([]);

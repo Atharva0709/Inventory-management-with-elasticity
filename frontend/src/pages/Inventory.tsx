@@ -54,7 +54,7 @@ export default function InventoryManager() {
   const [message, setMessage] = useState("");
   const [expandedHub, setExpandedHub] = useState<string | null>(null); 
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+  const API_URL = import.meta.env.PROD ? "" : (import.meta.env.VITE_API_URL || "http://localhost:3000");
 
   // --- LOGICAL INITIALIZATION (The Fix) ---
   const initData = async () => {
